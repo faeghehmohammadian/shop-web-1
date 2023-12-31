@@ -1,0 +1,39 @@
+/* Header container */
+.header {
+    box-shadow: 0px 3px 5px #ddd;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Distribute content evenly */
+    width: 100%; /* Ensure full width */
+    background-color: #fff; /* Add a background color (optional) */
+  }
+  
+  /* Menu links and icons */
+  .header ul {
+    display: flex;
+    list-style: none; /* Remove default list bullets */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .header ul li {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  /* Adjust for icons */
+  .header .rightSide{
+    display: flex ;
+    margin-right: 10px; /* Adjust the spacing as needed */
+}
+
+.has-circle {
+    width: 50px; /* Adjust as needed */
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: brown;
+    padding: 20px;
+  }
