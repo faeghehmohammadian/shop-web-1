@@ -12,6 +12,7 @@
   /* Menu links and icons */
   .header ul {
     display: flex;
+    align-items: center;
     list-style: none; /* Remove default list bullets */
     margin: 0; /* Remove default margin */
   }
@@ -24,16 +25,19 @@
   /* Adjust for icons */
   .header .rightSide{
     display: flex ;
-    margin-right: 10px; /* Adjust the spacing as needed */
+    margin-right: 5px; /* Adjust the spacing as needed */
+}
+.header .rightSide .FontAwesomeIcon{
+  margin-right: 5px; 
 }
 
-.has-circle {
-    width: 50px; /* Adjust as needed */
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: brown;
-    padding: 20px;
+.hasCirle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  background-color: gainsboro;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   }

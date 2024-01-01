@@ -18,13 +18,15 @@ function Navbar() {
 
             <div className={styled.rightSide}>
                 <ul>
-                    <li> <FontAwesomeIcon icon={faFacebookF} /></li>
+                    <li><FontAwesomeIcon icon={faFacebookF} /></li>
                     <li><FontAwesomeIcon icon={faTwitter} /></li>
                     <li><FontAwesomeIcon icon={faGooglePlus} /></li>
                     <li><FontAwesomeIcon icon={faBehance} /></li>
                 </ul>
                 <ul>
-                    <li className='has-circle'> <FontAwesomeIcon icon={faBagShopping} /></li>
+                    <li className={styled.hasCirle}>
+                         <FontAwesomeIcon icon={faBagShopping}/>     
+                    </li>
                     <li>|</li>
                     <li><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
                 </ul>
