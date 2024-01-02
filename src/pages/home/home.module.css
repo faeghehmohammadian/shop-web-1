@@ -1,0 +1,55 @@
+.container{
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+}
+.productContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.makeFlexCol{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+
+}
+.makeFlexRow{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+}
+.productsList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.makeFlexRowCon{
+    display: flex;
+    flex-direction: row;
+}
+.sideBar{
+    margin-top: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    
+}
+.sideBarRenge{
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.rengeNum{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.featuredProducts{
+    margin-top: 50px;
+}
