@@ -2,6 +2,17 @@ import Featureproducts from "../../components/featureproducts/Featureproducts";
 import Navbar from "../../components/navbar/Navbar";
 import Product from "../../components/product/Product";
 import styled from "./home.module.css"
+import img1 from "./../../assets/images/img1.jfif"
+import img2 from "./../../assets/images/img2.jfif"
+import img3 from "./../../assets/images/img3.jfif"
+import img4 from "./../../assets/images/img4.jfif"
+import img5 from "./../../assets/images/img5.jfif"
+import img6 from "./../../assets/images/img6.jfif"
+
+import img7 from "./../../assets/images/img7.jfif"
+import img8 from "./../../assets/images/img8.jfif"
+import img9 from "./../../assets/images/img9.jfif"
+import img10 from "./../../assets/images/img10.jfif"
 
 function Home() {
     return (
@@ -20,12 +31,12 @@ function Home() {
 
                     </div>
                     <div className={styled.productsList}>
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
-                        <Product />
+                        <Product imgsrc={img1} name="T-shirt with slippers design"/>
+                        <Product imgsrc={img2} name="men's shirt"/>
+                        <Product imgsrc={img3} name="white hoodie"/>
+                        <Product imgsrc={img4} name="Men's shorts"/>
+                        <Product imgsrc={img5} name="Men's college shoes"/>
+                        <Product imgsrc={img6} name="Ladies Blouse"/>
                     </div>
                 </div>
                 <div className={styled.sideBar}>
@@ -40,11 +51,12 @@ function Home() {
                     </div>
                     <div className={styled.featuredProducts}>
                         <div style={{marginBottom:'15px', fontWeight:'bold'}}>Featured Products</div>
-                        <Featureproducts/>
-                        <Featureproducts/>
-                        <Featureproducts/>
-                        <Featureproducts/>
-                        <Featureproducts/>
+                        <Featureproducts imgsrc={img7} name="Sunglasses" price='785$'/>
+                        <Featureproducts imgsrc={img8} name="sunhat" price='315$'/>
+                        <Featureproducts imgsrc={img9} name="Fancy slippers" price='199$'/>
+                        <Featureproducts imgsrc={img1} name="T-shirt with slippers design" price='299$'/>
+                        <Featureproducts imgsrc={img10} name="‌black T-shirt" price='320$'/>
+                        <Featureproducts imgsrc={img2} name="men's shirt" price='450$'/>
                     </div>
                 </div>
             </div>
