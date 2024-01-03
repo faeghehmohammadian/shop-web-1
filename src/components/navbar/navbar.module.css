@@ -22,13 +22,24 @@
     margin-right: 20px;
     cursor: pointer;
   }
+  .leftSide{
+    display: flex;
+    flex-direction: row;
+  }
+  .rightSide{
+    display: flex;
+    flex-direction: row;
+  }
+  .mobileMenu{
+    visibility: hidden;
+  }
   
   /* Adjust for icons */
-  .header .rightSide{
+  .header .menu{
     display: flex ;
     margin-right: 5px; /* Adjust the spacing as needed */
 }
-.header .rightSide .FontAwesomeIcon{
+.header .menu .FontAwesomeIcon{
   margin-right: 5px; 
 }
 
@@ -41,4 +52,49 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  }
+  .shopi {
+    color: blue; /* Use unquoted color values for efficiency */
+    font-size: 20px; /* Hyphenate font-size */
+    font-weight: bold; /* Add a semicolon */
+    margin-right: 40px; /* Use hyphens for margin-right */
+    list-style: none; /* Correctly apply list-style: none */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .socialIconMobile{
+    visibility: hidden;
+  }
+  .socialIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .mobileMenu{
+      visibility: visible;
+      font-size: x-large;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .socialIcon ul{
+      display: none;
+    }
+    .menu ul {
+      display: none;
+    }
+    .shopi{
+      margin-right: 20px;
+    }
+    .socialIconMobile{
+      visibility: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
   }
