@@ -13,6 +13,7 @@ import img7 from "./../../assets/images/img7.jfif"
 import img8 from "./../../assets/images/img8.jfif"
 import img9 from "./../../assets/images/img9.jfif"
 import img10 from "./../../assets/images/img10.jfif"
+import Footer from "../../components/footer/Footer";
 
 function Home() {
     return (
@@ -60,6 +61,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

@@ -1,0 +1,28 @@
+
+.container{
+    width: 100%;
+    height:auto;
+    background-color: rgb(219, 219, 244);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.container ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container ul li{
+    padding: 20px;
+}
+
+.shopi {
+    color: blue; /* Use unquoted color values for efficiency */
+    font-size: 80px; /* Hyphenate font-size */
+    font-weight: bold; /* Add a semicolon */
+    margin-right: 40px; /* Use hyphens for margin-right */
+    list-style: none; /* Correctly apply list-style: none */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
