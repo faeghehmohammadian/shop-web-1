@@ -4,18 +4,26 @@ import Product from "../../components/product/Product";
 import styled from "./home.module.css"
 import img1 from "./../../assets/images/img1.jfif"
 import img2 from "./../../assets/images/img2.jfif"
-import img3 from "./../../assets/images/img3.jfif"
-import img4 from "./../../assets/images/img4.jfif"
-import img5 from "./../../assets/images/img5.jfif"
-import img6 from "./../../assets/images/img6.jfif"
+// import img3 from "./../../assets/images/img3.jfif"
+// import img4 from "./../../assets/images/img4.jfif"
+// import img5 from "./../../assets/images/img5.jfif"
+// import img6 from "./../../assets/images/img6.jfif"
 
 import img7 from "./../../assets/images/img7.jfif"
 import img8 from "./../../assets/images/img8.jfif"
 import img9 from "./../../assets/images/img9.jfif"
 import img10 from "./../../assets/images/img10.jfif"
 import Footer from "../../components/footer/Footer";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Home() {
+    const [products,setProducts]=useState([])
+    useEffect(()=>{
+        axios.get("http://localhost:8000/data").then((res)=>{
+            setProducts(res.data)
+        })
+    },[]);
     return (
         <div className="container">
             <Navbar />
@@ -32,12 +40,17 @@ function Home() {
 
                     </div>
                     <div className={styled.productsList}>
-                        <Product imgsrc={img1} name="T-shirt with slippers design"/>
+                        {
+                            products.map((product)=>(
+                                <Product imgsrc={product.image} name={product.name}/>
+                            ))
+                        }
+                        {/* <Product imgsrc={img1} name={products}/>
                         <Product imgsrc={img2} name="men's shirt"/>
                         <Product imgsrc={img3} name="white hoodie"/>
                         <Product imgsrc={img4} name="Men's shorts"/>
                         <Product imgsrc={img5} name="Men's college shoes"/>
-                        <Product imgsrc={img6} name="Ladies Blouse"/>
+                        <Product imgsrc={img6} name="Ladies Blouse"/> */}
                     </div>
                 </div>
                 <div className={styled.sideBar}>
