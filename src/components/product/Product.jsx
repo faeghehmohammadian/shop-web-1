@@ -20,7 +20,7 @@ function Product(props) {
                         <FontAwesomeIcon icon={faBagShopping} />
                     </li>
                 </div>
-                <p>299$</p>
+                <p>{props.price}$</p>
             </div>
         </div>
     )

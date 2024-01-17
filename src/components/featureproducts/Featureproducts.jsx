@@ -9,7 +9,7 @@ function Featureproducts(props) {
                 </div>
                 <div className={styled.contentLeft}>
                     <p style={{ fontWeight: 'bold' }}>{props.name}</p>
-                    <p style={{ fontWeight: 'bold' }}>{props.price}</p>
+                    <p style={{ fontWeight: 'bold' }}>{props.price}$</p>
                 </div>
             </div>
         </div>
