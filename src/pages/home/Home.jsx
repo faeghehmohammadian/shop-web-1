@@ -8,6 +8,7 @@ import axios from "axios";
 
 function Home() {
     const [products,setProducts]=useState([])
+    const [priceRange, setPriceRange] = useState({ min: 299, max: 1000 });
     useEffect(()=>{
         axios.get("http://localhost:8000/data").then((res)=>{
             setProducts(res.data)
@@ -15,6 +16,17 @@ function Home() {
             console.log(err)
         })
     },[]);
+    const handleFilter = () => {
+        // Perform filtering based on the price range (priceRange)
+        // You can modify this logic based on your requirements
+        const filteredProducts = products.filter((product) => {
+            const productPrice = parseFloat(product.price.replace('$', ''));
+            return productPrice >= priceRange.min && productPrice <= priceRange.max;
+        });
+
+        // Set the filtered products in the state
+        setProducts(filteredProducts);
+    };
     return (
         <div className="container">
             <Navbar />
@@ -41,12 +53,14 @@ function Home() {
                 <div className={styled.sideBar}>
                     <div className={styled.sideBarRenge}>
                         <div style={{marginBottom:'15px', fontWeight:'bold'}}>Fiter by price</div>
-                        <input type="range" id="volume" name="volume" min="299$" max="1000$" />
+                        <input type="range" id="volume" name="volume" min={priceRange.min} max={priceRange.max} 
+                                value={priceRange.max}
+                                onChange={(e) => setPriceRange(e.target.value)}/>
                         <div className={styled.rengeNum}>
-                            <div>299$</div>
-                            <div>1000$</div>
+                            <div>{priceRange.min}$</div>
+                            <div>{priceRange.max}$</div>
                         </div>
-                        <button style={{padding:"5px",borderStyle:"none",color:"white" ,width:'70px', marginTop:"20px" ,backgroundColor:"hsl(240, 100%, 75%)"}}>FILTER</button>
+                        <button onClick={handleFilter} style={{padding:"5px",borderStyle:"none",color:"white" ,width:'70px', marginTop:"20px" ,backgroundColor:"hsl(240, 100%, 75%)"}}>FILTER</button>
                     </div>
                     <div className={styled.featuredProducts}>
                         <div style={{marginBottom:'15px', fontWeight:'bold'}}>Featured Products</div>
