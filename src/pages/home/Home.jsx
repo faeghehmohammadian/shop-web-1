@@ -8,22 +8,30 @@ import axios from "axios";
 
 function Home() {
     const [products,setProducts]=useState([])
-    const [priceRange, setPriceRange] = useState({ min: 299, max: 1000 });
+
+    const [price, setPrice] = useState([]);
+    const minPrice = Math.min(price);
+    const maxPrice = Math.max(price);
     useEffect(()=>{
         axios.get("http://localhost:8000/data").then((res)=>{
             setProducts(res.data)
+                // Set the initial state for the price range
+                setPrice(...res.data.map(product => parseFloat(product.price.replace('$', ''))));
+                
+
         }).catch((err)=>{
             console.log(err)
         })
     },[]);
-    const handleFilter = () => {
-        // Perform filtering based on the price range (priceRange)
+    console.log({price})
+    const handleFilter = (newMaxPrice) => {
+        // Perform filtering based on the price range (price)
         // You can modify this logic based on your requirements
         const filteredProducts = products.filter((product) => {
             const productPrice = parseFloat(product.price.replace('$', ''));
-            return productPrice >= priceRange.min && productPrice <= priceRange.max;
+            return productPrice >= price.min && productPrice <= newMaxPrice;
         });
-
+    
         // Set the filtered products in the state
         setProducts(filteredProducts);
     };
@@ -53,12 +61,13 @@ function Home() {
                 <div className={styled.sideBar}>
                     <div className={styled.sideBarRenge}>
                         <div style={{marginBottom:'15px', fontWeight:'bold'}}>Fiter by price</div>
-                        <input type="range" id="volume" name="volume" min={priceRange.min} max={priceRange.max} 
-                                value={priceRange.max}
-                                onChange={(e) => setPriceRange(e.target.value)}/>
+                        <div>{price}$</div>
+                        <input type="range" id="volume" name="volume" min={minPrice} max={maxPrice}  
+                                value={price}
+                                onChange={(e) => handleFilter(parseFloat(e.target.value))}/>
                         <div className={styled.rengeNum}>
-                            <div>{priceRange.min}$</div>
-                            <div>{priceRange.max}$</div>
+                            <div>{minPrice}$</div>
+                            <div>{maxPrice}$</div>
                         </div>
                         <button onClick={handleFilter} style={{padding:"5px",borderStyle:"none",color:"white" ,width:'70px', marginTop:"20px" ,backgroundColor:"hsl(240, 100%, 75%)"}}>FILTER</button>
                     </div>

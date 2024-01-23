@@ -56,7 +56,14 @@
 
 @media only screen and (max-width: 600px) {
     .container {
+        width: 100%;
         flex-direction: column;
+        padding: 0 25px;
     }
-
+    .productContainer{
+        width: 70%;
+    }
+    .sideBar{
+        width: 70%;
+    }
   }

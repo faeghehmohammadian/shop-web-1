@@ -27,3 +27,16 @@
     align-items: center;
     justify-content: center;
   }
+  @media only screen and (max-width: 600px) {
+    .container{
+        height: 250px;
+    }
+    .shopi{
+        font-size: 50px;
+    }
+    .container ul{
+        display: flex;
+        flex-direction: column;
+        
+    }
+  }
